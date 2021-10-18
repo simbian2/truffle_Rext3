@@ -75,9 +75,9 @@ const App = () => {
   const sendTx = async () => {
     const {account} = state
     if(value > 0){
-      setLoadding(prev => !prev)
       const result = await axios.post('http://localhost:3001/rpc/setTx',{from:account,val:value})
       console.log(result)
+      setLoadding(prev => !prev)
     }
   }
 
